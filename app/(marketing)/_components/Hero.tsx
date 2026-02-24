@@ -26,11 +26,11 @@ export default function Hero() {
           </div>
 
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl text-cyan-900 dark:text-cyan-50 leading-tight mb-4">
-            Materni<span className="text-emerald-600 dark:text-emerald-400">Flow</span>
+            OB<span className="text-emerald-600 dark:text-emerald-400">Nexus</span>
           </h1>
 
           <p className="font-display text-xl sm:text-2xl text-cyan-600 dark:text-cyan-400 mb-6">
-            AI-Powered OB/GYN Scheduling Assistant
+            AI-Powered OB/GYN Operation Assistant
           </p>
 
           <div className="w-24 h-1 bg-emerald-500 rounded mb-8" />
