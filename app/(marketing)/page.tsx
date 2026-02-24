@@ -4,23 +4,19 @@ import HomePageContent from "./HomePageContent"
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateSEOMetadata({
-    title: "John Doe - Solution Architect & Builder",
-    description: "Solution Architect and Open Source Developer with 150+ Python libraries, 10M+ monthly downloads, and 600+ repositories. Specialized in cloud architecture, AI, and enterprise solutions.",
+    title: "OBNexus - AI Powered OB/GYN Operation Assistant",
+    description: "An intelligent AI agent that helps healthcare staff manage obstetrics and gynecology ward operations through natural language conversations. Built as a hands-on learning project for AI Agent development.",
     keywords: [
-      "Open Source Developer",
-      "Python Libraries",
-      "Cloud Architecture",
-      "Enterprise Solutions",
-      "Automation",
-      "Software Engineering",
-      "Tech Leadership",
+      "AI",
+      "AI Agent",
     ],
-    url: "https://johndoe.me",
-    ogTitle: "John Doe - Solution Architect & Open Source Builder",
-    ogDescription: "Experienced Solution Architect and prolific Open Source Developer. Creator of 160+ Python libraries with 10M+ monthly downloads. Specialized in cloud architecture, automation, and enterprise solutions.",
-    imageAlt: "John Doe Profile Photo - Solution Architect & Builder",
-    twitterTitle: "John Doe - Solution Architect & Builder",
-    twitterDescription: "Solution Architect and Open Source Developer with 160+ Python libraries, 10M+ monthly downloads, and 600+ repositories. Specialized in cloud architecture, AI, and enterprise solutions.",
+    url: "",
+    ogTitle: "OBNexus - AI Powered OB/GYN Operation Assistant",
+    ogDescription: "An intelligent AI agent that helps healthcare staff manage obstetrics and gynecology ward operations through natural language conversations. Built as a hands-on learning project for AI Agent development.",
+    imageAlt: "OBNexus - AI Powered OB/GYN Operation Assistant",
+    twitterTitle: "OBNexus - AI Powered OB/GYN Operation Assistant",
+    twitterDescription: "An intelligent AI agent that helps healthcare staff manage obstetrics and gynecology ward operations through natural language conversations. Built as a hands-on learning project for AI Agent development.",
+  })
   })
 }
 
