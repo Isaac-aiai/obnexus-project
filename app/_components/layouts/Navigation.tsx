@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, Github } from "lucide-react"
+import { Menu, X, Github, Linkedin } from "lucide-react"
 import { NavItem, NavigationProps } from "@/types"
 
 const DEFAULT_NAV_ITEMS: NavItem[] = [
@@ -31,7 +31,7 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
             href="/"
             className="font-display text-2xl font-bold text-white hover:text-cyan-400 transition-colors cursor-pointer"
           >
-            obnexus
+            obnexus Built by LingXin Wang
           </Link>
 
           {/* Desktop Navigation */}
