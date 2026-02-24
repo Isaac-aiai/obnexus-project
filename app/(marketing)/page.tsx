@@ -17,7 +17,6 @@ export async function generateMetadata(): Promise<Metadata> {
     twitterTitle: "OBNexus - AI Powered OB/GYN Operation Assistant",
     twitterDescription: "An intelligent AI agent that helps healthcare staff manage obstetrics and gynecology ward operations through natural language conversations. Built as a hands-on learning project for AI Agent development.",
   })
-  })
 }
 
 export default function HomePage() {
