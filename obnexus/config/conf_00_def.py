@@ -95,7 +95,8 @@ class Config:
     aws_region: str | None = dataclasses.field(default=None)
     aws_access_key_id: str | None = dataclasses.field(default=None)
     aws_secret_access_key: str | None = dataclasses.field(default=None)
-    model_id: str | None = dataclasses.field(default="us.amazon.nova-micro-v1:0")
+    z_ai_api_key: str | None = dataclasses.field(default=None)
+    model_id: str | None = dataclasses.field(default=None)
     # max_message_length: int = dataclasses.field(default=1000)
     db_host: str | None = dataclasses.field(default=None)
     db_port: int | None = dataclasses.field(default=None)
@@ -114,6 +115,9 @@ class Config:
 
         return cls(
             aws_region="us-east-1",
+            z_ai_api_key=os.environ.get("Z_AI_API_KEY"),
+            # model_id="us.amazon.nova-micro-v1:0",
+            model_id="glm-4.7-Flash",
             db_host=os.environ["DB_HOST"],
             db_port=int(os.environ["DB_PORT"]),
             db_user=os.environ["DB_USER"],
@@ -128,8 +132,11 @@ class Config:
         """
         return cls(
             aws_region="us-east-1",
-            aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
-            aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"],
+            aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
+            aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
+            z_ai_api_key=os.environ.get("Z_AI_API_KEY"),
+            # model_id="us.amazon.nova-micro-v1:0",
+            model_id="glm-4.7-Flash",
             db_host=os.environ["DB_HOST"],
             db_port=int(os.environ["DB_PORT"]),
             db_user=os.environ["DB_USER"],

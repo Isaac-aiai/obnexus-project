@@ -23,6 +23,7 @@ dependencies = [
     "strands-agents-tools>=0.2.20,<1.0.0",  # Strands Agents Tools is a collection of utilities and integrations designed to enhance the functionality of Strands Agents. It includes pre-built tools for common tasks, such as web scraping, database interactions, and API calls, allowing developers to easily incorporate these capabilities into their agents without having to build them from scratch.
     "fire>=0.6.0,<1.0.0",           # Python library for creating command line interfaces (CLIs) from absolutely any Python object
     "python-dotenv>=1.2.1,<2.0.0",  # Read key-value pairs from a .env file and set them as environment variables
+    "openai>=2.20.0,<3.0.0",         # OpenAI Python client for accessing OpenAI and compatible APIs (e.g., Z.AI GLM)
 ]
 
 [project.optional-dependencies]
