@@ -12,24 +12,24 @@ export const Overview = () => {
       exit={{ opacity: 0, y: 20 }}
       transition={{ delay: 0.3 }}
     >
-      <div className="border border-cyan-200 dark:border-cyan-800 bg-white dark:bg-slate-900 rounded-xl shadow-sm">
+      <div className="glass-card border-cyan-500/50">
         <div className="py-12 px-8 flex flex-col items-center text-center">
-          {/* Medical Icon */}
+          {/* AI Icon - Neon style */}
           <div className="mb-6">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-cyan-100 dark:bg-cyan-900/30">
-              <HeartPulse className="w-8 h-8 text-cyan-600 dark:text-cyan-400" />
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-600/20 to-purple-600/20 border-2 border-cyan-500/60 shadow-lg shadow-cyan-500/40">
+              <HeartPulse className="w-8 h-8 text-cyan-300 font-bold" />
             </div>
           </div>
 
-          <h2 className="font-display text-3xl sm:text-4xl text-cyan-900 dark:text-cyan-50 mb-2">
-            Hi! I'm <span className="text-emerald-600 dark:text-emerald-400">{METADATA.AI_ASSISTANT_NAME}</span>
+          <h2 className="font-display text-3xl sm:text-4xl text-white mb-2">
+            Hi! I'm <span className="text-cyan-400">{METADATA.AI_ASSISTANT_NAME}</span>
           </h2>
 
-          <p className="font-display text-lg text-cyan-600 dark:text-cyan-400 mb-4">
+          <p className="font-display text-lg text-slate-300 mb-4">
             Your OB/GYN Scheduling Assistant
           </p>
 
-          <p className="text-cyan-700 dark:text-cyan-300 max-w-md leading-relaxed">
+          <p className="text-slate-400 max-w-md leading-relaxed">
             I can help you check ward status, predict patient discharge times, coordinate room assignments, flag high-risk cases, and assist with placing orders. Just ask!
           </p>
         </div>

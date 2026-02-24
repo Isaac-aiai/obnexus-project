@@ -49,23 +49,23 @@ export default function MarkdownModal({
       />
 
       {/* Modal Content */}
-      <div className="relative bg-regular-button/95 backdrop-blur-md border border-primary/30 rounded-2xl max-w-4xl w-full max-h-[80vh] overflow-hidden shadow-2xl shadow-primary/20">
+      <div className="relative glass-card rounded-2xl max-w-4xl w-full max-h-[80vh] overflow-hidden shadow-2xl">
         {/* Modal Header */}
-        <div className="flex items-start justify-between p-6 border-b border-primary/20">
+        <div className="flex items-start justify-between p-6 border-b border-slate-800">
           <div className="flex items-start gap-4">
             {Icon && (
               <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
-                  <Icon size={24} className="text-primary" />
+                <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center border-2 border-cyan-500/60">
+                  <Icon size={24} className="text-cyan-300 font-bold" />
                 </div>
               </div>
             )}
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-2">
+              <h2 className="text-2xl font-bold text-white mb-2">
                 {title}
               </h2>
               {description && (
-                <p className="text-text-secondary">
+                <p className="text-slate-400 font-medium">
                   {description}
                 </p>
               )}
@@ -74,7 +74,7 @@ export default function MarkdownModal({
 
           <button
             onClick={onClose}
-            className="text-text-secondary hover:text-primary transition-colors duration-200 p-2 hover:bg-primary/10 rounded-lg"
+            className="text-slate-600 hover:text-slate-300 hover:text-cyan-400 transition-colors duration-200 p-2 hover:bg-slate-800 rounded-lg font-bold cursor-pointer"
             aria-label="Close modal"
           >
             <X size={24} />
@@ -82,7 +82,7 @@ export default function MarkdownModal({
         </div>
 
         {/* Modal Body */}
-        <div className="overflow-y-auto max-h-[60vh] p-6">
+        <div className="overflow-y-auto max-h-[60vh] p-6 bg-slate-950">
           <MarkdownRenderer content={content} />
         </div>
       </div>

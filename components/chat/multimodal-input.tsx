@@ -106,8 +106,8 @@ export function MultimodalInput({
       {/* Suggested Questions */}
       {messages.length === 0 && (
         <div className="flex flex-col gap-3">
-          <div className="border border-cyan-200 dark:border-cyan-800 p-3 bg-white dark:bg-slate-900 rounded-lg">
-            <p className="font-display text-sm text-cyan-700 dark:text-cyan-300 text-center">
+          <div className="glass-card p-3 rounded-xl border-cyan-500/40">
+            <p className="font-display text-sm text-slate-300 text-center font-bold">
               Ask me directly or click a suggestion
             </p>
           </div>
@@ -130,12 +130,12 @@ export function MultimodalInput({
                         content: suggestedAction.action,
                       });
                     }}
-                    className="group text-left border border-cyan-200 dark:border-cyan-800 bg-white dark:bg-slate-900 hover:bg-cyan-100 dark:hover:bg-cyan-900/50 hover:border-emerald-400 dark:hover:border-emerald-500 px-4 py-3 text-sm flex-1 gap-1 sm:flex-col w-full h-auto justify-start items-start transition-all cursor-pointer rounded-lg"
+                    className="group glass-card text-left bg-slate-900 hover:bg-slate-800 hover:border-cyan-500/60 border-cyan-500/30 px-4 py-3 text-sm flex-1 gap-1 sm:flex-col w-full h-auto justify-start items-start transition-all cursor-pointer rounded-lg"
                   >
-                    <span className="font-display text-sm text-cyan-900 dark:text-cyan-100">
+                    <span className="font-display text-sm text-slate-100">
                       {suggestedAction.title}
                     </span>
-                    <span className="text-xs text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 leading-snug transition-colors">
+                    <span className="text-xs text-slate-400 group-hover:text-slate-300 leading-snug transition-colors">
                       {suggestedAction.label}
                     </span>
                   </Button>
@@ -155,9 +155,9 @@ export function MultimodalInput({
           onChange={handleInput}
           className={cn(
             "min-h-[24px] max-h-[calc(75dvh)] overflow-hidden resize-none !text-base",
-            "bg-white dark:bg-slate-900 border border-cyan-200 dark:border-cyan-800 rounded-lg",
-            "focus:border-emerald-400 focus:ring-emerald-400 focus:ring-2",
-            "text-cyan-900 dark:text-cyan-100 placeholder:text-cyan-400 dark:placeholder:text-cyan-600",
+            "glass-card bg-slate-900 border-cyan-500/40 rounded-xl",
+            "focus:outline-none focus:ring-2 focus:ring-cyan-400",
+            "text-white placeholder:text-slate-600 font-medium",
             "pr-12",
             className,
           )}
@@ -178,7 +178,7 @@ export function MultimodalInput({
 
         {isLoading ? (
           <Button
-            className="p-2 h-fit absolute bottom-2 right-2 bg-white dark:bg-slate-800 border border-cyan-200 dark:border-cyan-700 hover:bg-cyan-100 dark:hover:bg-cyan-900 text-cyan-700 dark:text-cyan-300 cursor-pointer rounded-lg"
+            className="p-2 h-fit absolute bottom-2 right-2 glass-card bg-slate-800 border-slate-700 hover:bg-slate-700 text-slate-300 cursor-pointer rounded-lg shadow-md transition-all font-bold"
             onClick={(event) => {
               event.preventDefault();
               stop();
@@ -189,7 +189,7 @@ export function MultimodalInput({
           </Button>
         ) : (
           <Button
-            className="p-2 h-fit absolute bottom-2 right-2 bg-emerald-500 hover:bg-emerald-600 text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer rounded-lg"
+            className="p-2 h-fit absolute bottom-2 right-2 bg-gradient-to-br from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer rounded-lg shadow-lg shadow-cyan-500/70 font-bold"
             onClick={(event) => {
               event.preventDefault();
               submitForm();

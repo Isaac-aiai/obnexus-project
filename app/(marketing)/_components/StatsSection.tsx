@@ -5,36 +5,31 @@ import { achievementStats } from "@/data/achievement-stats"
 
 export default function StatsSection() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 border-t-4 border-black dark:border-white">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 border-t-2 border-slate-800 bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <h2 className="font-display text-display-md text-black dark:text-white mb-12">
+        <h2 className="font-display text-5xl sm:text-6xl text-white mb-12 font-bold">
           ACHIEVEMENTS
         </h2>
 
-        {/* Stats Grid - Bold Style */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {achievementStats.map((stat, index) => {
             const IconComponent = stat.icon
             const isClickable = stat.href && stat.href.trim() !== ""
-            const isLast = index === achievementStats.length - 1
 
             const cardContent = (
               <div className="text-center py-12">
                 {/* Big Number */}
-                <div className="font-display text-6xl sm:text-7xl lg:text-8xl text-black dark:text-white mb-2">
+                <div className="font-display text-6xl sm:text-7xl lg:text-8xl text-white mb-2 font-bold">
                   {stat.number}
                 </div>
                 {/* Description */}
-                <div className="font-display text-xl sm:text-2xl text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+                <div className="font-display text-xl sm:text-2xl text-slate-400 uppercase tracking-wider font-semibold">
                   {stat.description}
                 </div>
               </div>
             )
-
-            const borderClass = isLast
-              ? "border-4 border-black dark:border-white"
-              : "border-4 border-r-0 sm:border-r-0 border-black dark:border-white"
 
             if (isClickable) {
               return (
@@ -43,13 +38,13 @@ export default function StatsSection() {
                   href={stat.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${borderClass} hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors cursor-pointer group`}
+                  className="glass-card p-0 hover:border-cyan-500/60 hover:shadow-lg hover:shadow-cyan-500/20 transition-all cursor-pointer group"
                 >
                   <div className="text-center py-12">
-                    <div className="font-display text-6xl sm:text-7xl lg:text-8xl group-hover:text-accent transition-colors mb-2">
+                    <div className="font-display text-6xl sm:text-7xl lg:text-8xl text-cyan-400 group-hover:text-cyan-500 transition-colors mb-2 font-bold">
                       {stat.number}
                     </div>
-                    <div className="font-display text-xl sm:text-2xl text-gray-600 dark:text-gray-400 group-hover:text-current uppercase tracking-wider transition-colors">
+                    <div className="font-display text-xl sm:text-2xl text-slate-400 group-hover:text-slate-300 uppercase tracking-wider transition-colors font-semibold">
                       {stat.description}
                     </div>
                   </div>
@@ -60,7 +55,7 @@ export default function StatsSection() {
             return (
               <div
                 key={index}
-                className={borderClass}
+                className="glass-card p-0"
               >
                 {cardContent}
               </div>

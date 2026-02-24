@@ -20,14 +20,14 @@ const ReasoningBlock = ({ text }: { text: string }) => {
   const previewText = text.length > 100 ? text.slice(0, 100) + "..." : text;
 
   return (
-    <div className="border border-amber-200 dark:border-amber-800 rounded-lg bg-amber-50 dark:bg-amber-950/30 overflow-hidden">
+    <div className="glass-card bg-purple-950/20 border-purple-500/40 overflow-hidden">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full px-3 py-2 flex items-center gap-2 text-left hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-colors"
+        className="w-full px-3 py-2 flex items-center gap-2 text-left hover:bg-purple-900/30 transition-colors cursor-pointer"
       >
         <svg
           className={cn(
-            "w-4 h-4 text-amber-600 dark:text-amber-400 transition-transform",
+            "w-4 h-4 text-purple-400 transition-transform font-bold",
             isExpanded && "rotate-90"
           )}
           fill="none"
@@ -36,18 +36,18 @@ const ReasoningBlock = ({ text }: { text: string }) => {
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
-        <span className="text-xs font-medium text-amber-700 dark:text-amber-300">
+        <span className="text-xs font-bold text-purple-300">
           Thinking
         </span>
         {!isExpanded && (
-          <span className="text-xs text-amber-600 dark:text-amber-400 truncate flex-1">
+          <span className="text-xs text-purple-400 truncate flex-1">
             {previewText}
           </span>
         )}
       </button>
       {isExpanded && (
-        <div className="px-3 py-2 border-t border-amber-200 dark:border-amber-800">
-          <div className="text-xs text-amber-800 dark:text-amber-200 whitespace-pre-wrap">
+        <div className="px-3 py-2 border-t border-purple-700/40">
+          <div className="text-xs text-purple-200 whitespace-pre-wrap">
             {text}
           </div>
         </div>
@@ -80,17 +80,17 @@ export const PreviewMessage = ({
       >
         {/* AI Assistant Avatar - Left side */}
         {message.role === "assistant" && (
-          <div className="w-8 h-8 flex items-center justify-center bg-emerald-500 shrink-0 rounded-lg">
-            <span className="font-display text-xs text-white">AI</span>
+          <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-cyan-500 to-blue-600 shrink-0 rounded-lg shadow-lg shadow-cyan-500/70">
+            <span className="font-display text-xs text-black font-bold">AI</span>
           </div>
         )}
 
         <div
           className={cn(
-            "flex flex-col gap-2 max-w-[85%] sm:max-w-[75%] p-4 rounded-xl",
+            "flex flex-col gap-2 max-w-[85%] sm:max-w-[75%] p-4 rounded-2xl",
             message.role === "user"
-              ? "bg-cyan-600 text-white"
-              : "bg-white dark:bg-slate-800 border border-cyan-200 dark:border-cyan-800"
+              ? "bg-gradient-to-br from-cyan-500 to-cyan-600 text-white shadow-lg shadow-cyan-500/60"
+              : "glass-card bg-slate-900 border-cyan-500/30"
           )}
         >
           {/* AI SDK v5: Use parts instead of content */}
@@ -110,7 +110,7 @@ export const PreviewMessage = ({
                       key={index}
                       className={cn(
                         message.role === "assistant"
-                          ? "text-cyan-900 dark:text-cyan-100"
+                          ? "text-slate-100"
                           : "text-white"
                       )}
                     >
@@ -136,7 +136,7 @@ export const PreviewMessage = ({
 
         {/* User Avatar - Right side */}
         {message.role === "user" && (
-          <div className="w-8 h-8 overflow-hidden border border-cyan-200 dark:border-cyan-700 shrink-0 rounded-lg">
+          <div className="w-8 h-8 overflow-hidden border border-slate-600/40 shrink-0 rounded-lg shadow-md">
             <Image
               src={CDN_ASSETS.PROFILE_PHOTO}
               alt="User Profile"
@@ -162,14 +162,14 @@ export const ThinkingMessage = () => {
       data-role={role}
     >
       <div className="flex gap-3 w-full justify-start">
-        <div className="w-8 h-8 flex items-center justify-center bg-emerald-500 shrink-0 rounded-lg">
-          <span className="font-display text-xs text-white">AI</span>
+        <div className="w-8 h-8 flex items-center justify-center bg-gradient-to-br from-cyan-500 to-blue-600 shrink-0 rounded-lg shadow-lg shadow-cyan-500/70">
+          <span className="font-display text-xs text-black font-bold">AI</span>
         </div>
 
-        <div className="p-4 bg-white dark:bg-slate-800 border border-cyan-200 dark:border-cyan-800 rounded-xl">
-          <div className="flex items-center gap-2 text-cyan-600 dark:text-cyan-400">
-            <span className="inline-block w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-            <span className="font-display text-sm">Thinking...</span>
+        <div className="glass-card p-4 bg-slate-900 border-cyan-500/30 rounded-2xl">
+          <div className="flex items-center gap-2 text-slate-300">
+            <span className="inline-block w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+            <span className="font-display text-sm font-bold">Thinking...</span>
           </div>
         </div>
       </div>

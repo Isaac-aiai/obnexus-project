@@ -104,7 +104,7 @@ export function Chat() {
   }, [messages.length]);
 
   return (
-    <div className="flex flex-col min-w-0 h-[calc(100dvh-64px)] bg-cyan-50 dark:bg-slate-950">
+    <div className="flex flex-col min-w-0 h-[calc(100dvh-64px)] bg-black gradient-dark">
       <div
         ref={messagesContainerRef}
         className="flex flex-col min-w-0 gap-4 flex-1 overflow-y-scroll pt-4 px-4"
@@ -112,25 +112,25 @@ export function Chat() {
         {/* Initial AI Assistant Welcome Display */}
         {messages.length === 0 && <Overview />}
 
-        {/* Context Banner */}
+        {/* Context Banner - Neon Style */}
         {messages.length > 0 && isContextBannerVisible && (
           <div className="max-w-3xl mx-auto w-full">
-            <div className="border border-cyan-200 dark:border-cyan-800 p-4 bg-white dark:bg-slate-900 rounded-xl">
+            <div className="glass-card p-4 border-cyan-500/50">
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-start gap-3 flex-1">
-                  <div className="w-10 h-10 bg-emerald-500 flex items-center justify-center shrink-0 rounded-lg">
-                    <span className="font-display text-sm text-white">AI</span>
+                  <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shrink-0 rounded-xl shadow-lg shadow-cyan-500/70 cursor-pointer">
+                    <span className="font-display text-sm text-black font-bold">AI</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-display text-sm text-cyan-900 dark:text-cyan-100">obnexus Assistant</h3>
-                    <p className="text-xs text-cyan-600 dark:text-cyan-400 mt-1">
-                      I'm here to help you with <span className="font-semibold text-emerald-600 dark:text-emerald-400">OB/GYN scheduling</span> and ward management.
+                    <h3 className="font-display text-sm text-white">obnexus Assistant</h3>
+                    <p className="text-xs text-slate-400 mt-1">
+                      I'm here to help you with <span className="font-bold text-cyan-400">OB/GYN scheduling</span> and ward management.
                     </p>
                   </div>
                 </div>
                 <button
                   onClick={() => setIsContextBannerVisible(false)}
-                  className="text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-200 transition-colors shrink-0 cursor-pointer"
+                  className="text-slate-500 hover:text-cyan-400 transition-colors shrink-0 cursor-pointer hover:bg-slate-900/50 p-1 rounded-lg"
                   aria-label="Close"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -164,7 +164,7 @@ export function Chat() {
         />
       </div>
 
-      <div className="p-4 bg-white dark:bg-slate-900 border-t border-cyan-200 dark:border-cyan-800">
+      <div className="p-4 bg-slate-950 border-t-2 border-slate-800 shadow-2xl">
         <form className="flex mx-auto gap-2 w-full md:max-w-3xl">
           <MultimodalInput
             chatId={chatId}

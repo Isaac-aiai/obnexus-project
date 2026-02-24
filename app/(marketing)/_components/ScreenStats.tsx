@@ -28,16 +28,16 @@ export default function ScreenStats() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex flex-col justify-center border-t-4 border-black dark:border-white py-16"
+      className="min-h-screen flex flex-col justify-center border-t-2 border-slate-800 py-16 bg-black"
     >
       {/* Section Title */}
       <div className="px-4 sm:px-6 lg:px-8 mb-12">
         <h2
-          className={`font-display text-[10vw] sm:text-[6vw] text-black dark:text-white transition-all duration-700 ${
+          className={`font-display text-[10vw] sm:text-[6vw] text-white font-bold transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          ACHIEVEMENTS
+          CAPABILITIES
         </h2>
       </div>
 
@@ -50,11 +50,11 @@ export default function ScreenStats() {
             const cardContent = (
               <div className="flex flex-col justify-center items-center h-full">
                 {/* Huge Number */}
-                <div className="font-display text-[20vw] sm:text-[12vw] md:text-[10vw] leading-none mb-4">
+                <div className="font-display text-[20vw] sm:text-[12vw] md:text-[10vw] leading-none mb-4 text-white font-bold">
                   {stat.number}
                 </div>
                 {/* Description */}
-                <div className="font-display text-2xl sm:text-3xl text-gray-600 dark:text-gray-400 uppercase tracking-wider text-center">
+                <div className="font-display text-2xl sm:text-3xl text-slate-400 uppercase tracking-wider text-center font-semibold">
                   {stat.description}
                 </div>
               </div>
@@ -62,7 +62,7 @@ export default function ScreenStats() {
 
             const cardClass = `
               w-[80vw] sm:w-[50vw] md:w-[40vw] h-[50vh] sm:h-[60vh]
-              border-4 border-black dark:border-white
+              glass-card
               flex items-center justify-center
               transition-all duration-500
               ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}
@@ -75,14 +75,14 @@ export default function ScreenStats() {
                   href={stat.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${cardClass} hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black cursor-pointer group`}
+                  className={`${cardClass} hover:border-cyan-500/60 hover:shadow-lg hover:shadow-cyan-500/20 cursor-pointer group`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   <div className="flex flex-col justify-center items-center h-full">
-                    <div className="font-display text-[20vw] sm:text-[12vw] md:text-[10vw] leading-none mb-4 group-hover:text-accent transition-colors">
+                    <div className="font-display text-[20vw] sm:text-[12vw] md:text-[10vw] leading-none mb-4 text-cyan-400 group-hover:text-cyan-500 transition-colors font-bold">
                       {stat.number}
                     </div>
-                    <div className="font-display text-2xl sm:text-3xl text-gray-600 dark:text-gray-400 group-hover:text-current uppercase tracking-wider text-center transition-colors">
+                    <div className="font-display text-2xl sm:text-3xl text-slate-400 group-hover:text-slate-300 uppercase tracking-wider text-center transition-colors font-semibold">
                       {stat.description}
                     </div>
                   </div>
@@ -106,7 +106,7 @@ export default function ScreenStats() {
       {/* Scroll Hint */}
       <div className="px-4 sm:px-6 lg:px-8 mt-8">
         <p
-          className={`font-display text-sm text-gray-500 dark:text-gray-500 uppercase tracking-widest transition-all duration-700 delay-300 ${
+          className={`font-display text-sm text-slate-500 uppercase tracking-widest transition-all duration-700 delay-300 font-bold ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >

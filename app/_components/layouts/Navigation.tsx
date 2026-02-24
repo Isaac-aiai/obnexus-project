@@ -23,15 +23,15 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 minimal-nav">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b-2 border-slate-800 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo / Brand */}
           <Link
             href="/"
-            className="font-display text-2xl text-black dark:text-white hover:text-accent transition-colors"
+            className="font-display text-2xl font-bold text-white hover:text-cyan-400 transition-colors cursor-pointer"
           >
-            JD
+            obnexus
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,7 +45,7 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="font-display text-lg px-6 py-2 bg-accent text-white border-2 border-accent hover:bg-black hover:border-black hover:text-white dark:hover:bg-white dark:hover:border-white dark:hover:text-black transition-colors cursor-pointer"
+                    className="font-display text-lg font-bold px-6 py-2 bg-gradient-to-br from-cyan-500 to-blue-600 text-black shadow-lg shadow-cyan-500/70 hover:from-cyan-400 hover:to-blue-500 transition-all cursor-pointer rounded-lg"
                   >
                     CHAT
                   </Link>
@@ -57,10 +57,10 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
                   key={item.href}
                   href={item.href}
                   className={`
-                    font-display text-lg uppercase tracking-wider transition-colors cursor-pointer
+                    font-display text-lg font-bold uppercase tracking-wider transition-colors cursor-pointer
                     ${active
-                      ? "text-accent"
-                      : "text-black dark:text-white hover:text-accent"
+                      ? "text-cyan-400"
+                      : "text-white hover:text-cyan-400"
                     }
                   `}
                 >
@@ -74,7 +74,7 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-black dark:text-white hover:text-accent transition-colors cursor-pointer"
+              className="p-2 text-white hover:text-cyan-400 transition-colors cursor-pointer"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -84,7 +84,7 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
 
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t-2 border-black dark:border-white">
+          <div className="md:hidden border-t-2 border-slate-800 bg-black">
             <div className="py-4 space-y-2">
               {items.map((item) => {
                 const active = isActive(item.href)
@@ -95,7 +95,7 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="block font-display text-xl py-3 px-4 bg-accent text-white text-center cursor-pointer"
+                      className="block font-display text-xl font-bold py-3 px-4 bg-gradient-to-br from-cyan-500 to-blue-600 text-black text-center shadow-lg shadow-cyan-500/70 cursor-pointer rounded-lg mx-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       CHAT
@@ -108,10 +108,10 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
                     key={item.href}
                     href={item.href}
                     className={`
-                      block font-display text-xl py-3 px-4 uppercase tracking-wider transition-colors cursor-pointer
+                      block font-display text-xl font-bold py-3 px-4 uppercase tracking-wider transition-colors cursor-pointer
                       ${active
-                        ? "text-accent"
-                        : "text-black dark:text-white hover:text-accent"
+                        ? "text-cyan-400"
+                        : "text-white hover:text-cyan-400"
                       }
                     `}
                     onClick={() => setIsMenuOpen(false)}

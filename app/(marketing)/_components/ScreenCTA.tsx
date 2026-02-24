@@ -29,7 +29,7 @@ export default function ScreenCTA() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 border-t-4 border-black dark:border-white"
+      className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 border-t-2 border-slate-800 bg-black"
     >
       {/* Main CTA */}
       <div
@@ -39,20 +39,19 @@ export default function ScreenCTA() {
       >
         <Link
           href="/chat"
-          className="group block w-full p-8 sm:p-12 lg:p-16 border-4 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 cursor-pointer"
+          className="group glass-card block w-full p-8 sm:p-12 lg:p-16 hover:border-cyan-500/60 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer"
         >
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="text-center sm:text-left">
-              <h2 className="font-display text-[8vw] sm:text-[5vw] lg:text-[4vw] leading-none mb-4">
-                CHAT WITH
-                <br />
-                <span className="text-accent group-hover:text-accent">VIRTUAL ME</span>
+              <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-none mb-4 font-bold text-white">
+                CHAT WITH<br />
+                <span className="text-cyan-400 group-hover:text-cyan-500">obnexus</span>
               </h2>
-              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 group-hover:text-gray-300 dark:group-hover:text-gray-600 transition-colors">
-                Ask about my experience, projects, and what makes me different
+              <p className="text-lg sm:text-xl text-slate-400 group-hover:text-slate-300 transition-colors font-medium">
+                Ask about OB/GYN scheduling, ward management, and patient care coordination
               </p>
             </div>
-            <ArrowRight className="w-12 h-12 sm:w-16 sm:h-16 group-hover:translate-x-4 transition-transform flex-shrink-0" />
+            <ArrowRight className="w-12 h-12 sm:w-16 sm:h-16 group-hover:translate-x-4 transition-transform flex-shrink-0 text-cyan-400" />
           </div>
         </Link>
       </div>
@@ -63,13 +62,13 @@ export default function ScreenCTA() {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <span className="font-display text-sm text-gray-500 dark:text-gray-500 uppercase tracking-widest self-center">
+        <span className="font-display text-sm text-slate-500 uppercase tracking-widest self-center font-bold">
           OR REACH OUT DIRECTLY
         </span>
         <div className="flex gap-4 justify-center">
           <a
             href="mailto:sanhe@johndoe.me"
-            className="p-3 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors cursor-pointer"
+            className="p-3 glass-card rounded-lg hover:border-cyan-500/60 hover:text-cyan-400 transition-colors cursor-pointer font-bold"
             aria-label="Email"
           >
             <Mail size={20} />
@@ -78,7 +77,7 @@ export default function ScreenCTA() {
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors cursor-pointer"
+            className="p-3 glass-card rounded-lg hover:border-cyan-500/60 hover:text-cyan-400 transition-colors cursor-pointer font-bold"
             aria-label="LinkedIn"
           >
             <FaLinkedin size={20} />
