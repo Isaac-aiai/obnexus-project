@@ -79,6 +79,17 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
             >
               <Github size={24} />
             </a>
+
+            {/* LinkedIn Link */}
+            <a
+              href="https://www.linkedin.com/in/lingxin-wang-68b767360"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-white hover:text-cyan-400 transition-colors cursor-pointer"
+              aria-label="LinkedIn profile"
+            >
+              <Linkedin size={24} />
+            </a>
           </div>
 
           {/* Mobile Navigation Button */}
@@ -141,6 +152,17 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
               >
                 <Github size={24} />
                 GitHub
+              </a>
+
+              {/* Mobile LinkedIn Link */}
+              <a
+                href="https://www.linkedin.com/in/lingxin-wang-68b767360"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 font-display text-xl font-bold py-3 px-4 text-white hover:text-cyan-400 transition-colors cursor-pointer"
+              >
+                <Linkedin size={24} />
+                LinkedIn
               </a>
             </div>
           </div>
