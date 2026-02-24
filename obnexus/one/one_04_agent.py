@@ -42,8 +42,8 @@ class AgentMixin:
     @cached_property
     def model(self: "One"):
         """Get the model instance (alias for bedrock_model)."""
-        # return self.bedrock_model
-        return self.glm_model
+        return self.bedrock_model
+        # return self.glm_model
 
     @cached_property
     def agent(self: "One") -> Agent:
