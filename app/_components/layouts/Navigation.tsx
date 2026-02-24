@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Github } from "lucide-react"
 import { NavItem, NavigationProps } from "@/types"
 
 const DEFAULT_NAV_ITEMS: NavItem[] = [
@@ -68,6 +68,17 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
                 </Link>
               )
             })}
+
+            {/* GitHub Link */}
+            <a
+              href="https://github.com/Isaac-aiai/obnexus-project"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-white hover:text-cyan-400 transition-colors cursor-pointer"
+              aria-label="GitHub repository"
+            >
+              <Github size={24} />
+            </a>
           </div>
 
           {/* Mobile Navigation Button */}
@@ -120,6 +131,17 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
                   </Link>
                 )
               })}
+
+              {/* Mobile GitHub Link */}
+              <a
+                href="https://github.com/Isaac-aiai/obnexus-project"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 font-display text-xl font-bold py-3 px-4 text-white hover:text-cyan-400 transition-colors cursor-pointer"
+              >
+                <Github size={24} />
+                GitHub
+              </a>
             </div>
           </div>
         )}
