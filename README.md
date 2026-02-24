@@ -2,7 +2,7 @@
 
 An intelligent AI agent that helps healthcare staff manage obstetrics and gynecology ward operations through natural language conversations. Built as a hands-on learning project for AI Agent development.
 
-![Chat Interface](img/13-Connect-UI-To-Agent/01-chat-interface.png)
+![Chat Interface](img/01-chat-interface.png)
 
 ---
 
@@ -29,7 +29,7 @@ Traditional software requires staff to navigate complex menus, fill out forms, a
 3. **Safe Write Operations**: The agent can execute approved operations (bed assignments, order creation) with proper validation
 4. **Contextual Understanding**: The agent knows hospital workflows and can guide staff through complex processes
 
-![Agent Capabilities](img/13-Connect-UI-To-Agent/02-what-can-i-do.png)
+![Agent Capabilities](img/02-what-can-i-do.png)
 
 ### What This Agent Can Do
 
@@ -42,7 +42,7 @@ Our obnexus agent demonstrates these capabilities:
 | **Execute** | Bed assignments, patient transfers, order creation, alert generation |
 | **Coordinate** | Shift handover summaries, procedure scheduling, provider assignments |
 
-![Agent Chat Example](img/13-Connect-UI-To-Agent/OB-GYN-wards-operation-agent-chat-example.png)
+![Agent Chat Example](img/OB-GYN-wards-operation-agent-chat-example.png)
 
 ---
 
