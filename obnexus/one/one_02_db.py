@@ -46,6 +46,8 @@ class DbMixin:
         if runtime.is_local():
             # return self.local_sqlite_engine
             return self.remote_postgres_engine
+        elif runtime.is_vercel():
+            return self.remote_postgres_engine
         else:
             raise NotImplementedError(
                 "Only local SQLite engine is implemented in this mixin."
