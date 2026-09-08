@@ -6,7 +6,7 @@ export const Overview = () => {
   return (
     <motion.div
       key="overview"
-      className="max-w-3xl mx-auto md:mt-8"
+      className="max-w-4xl mx-auto md:mt-8"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}

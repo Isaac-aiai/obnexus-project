@@ -150,15 +150,15 @@ export function MultimodalInput({
       <div className="relative">
         <Textarea
           ref={textareaRef}
-          placeholder="Enter your question..."
+          placeholder="Ask about ward status, discharge predictions, room assignments, alerts…"
           value={input}
           onChange={handleInput}
           className={cn(
-            "min-h-[24px] max-h-[calc(75dvh)] overflow-hidden resize-none !text-base",
+            "min-h-[56px] max-h-[calc(75dvh)] overflow-hidden resize-none !text-base",
             "glass-card bg-slate-900 border-cyan-500/40 rounded-xl",
             "focus:outline-none focus:ring-2 focus:ring-cyan-400",
             "text-white placeholder:text-slate-600 font-medium",
-            "pr-12",
+            "py-3.5 pl-4 pr-14",
             className,
           )}
           rows={3}

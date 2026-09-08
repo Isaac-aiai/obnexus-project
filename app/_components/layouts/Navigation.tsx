@@ -29,9 +29,14 @@ export default function Navigation({ items = DEFAULT_NAV_ITEMS }: NavigationProp
           {/* Logo / Brand */}
           <Link
             href="/"
-            className="font-display text-2xl font-bold text-white hover:text-cyan-400 transition-colors cursor-pointer"
+            className="group flex items-baseline gap-2 cursor-pointer"
           >
-            obnexus Built by LingXin Wang
+            <span className="font-display text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+              OB<span className="text-cyan-400">Nexus</span>
+            </span>
+            <span className="hidden sm:inline text-xs text-slate-500 font-medium">
+              by Lingxin Wang
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

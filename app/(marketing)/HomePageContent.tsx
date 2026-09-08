@@ -4,18 +4,16 @@ import Hero from "./_components/Hero"
 
 export default function HomePageContent() {
   return (
-    <div className="min-h-screen bg-black gradient-dark text-white">
-      <div className="relative">
-        <Hero />
+    <div className="h-screen flex flex-col bg-black gradient-dark text-white overflow-hidden">
+      <Hero />
 
-        <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t-2 border-slate-800 bg-slate-950 shadow-2xl">
-          <div className="max-w-7xl mx-auto text-center">
-            <p className="text-sm text-slate-400 font-medium">
-              &copy; {new Date().getFullYear()} obnexus. All rights reserved.
-            </p>
-          </div>
-        </footer>
-      </div>
+      <footer className="shrink-0 py-3 px-4 sm:px-6 lg:px-8 border-t border-slate-800/80 bg-slate-950/80">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-xs text-slate-500 font-medium">
+            &copy; {new Date().getFullYear()} OBNexus · Built by Lingxin Wang
+          </p>
+        </div>
+      </footer>
     </div>
   )
 }

@@ -114,7 +114,7 @@ export function Chat() {
 
         {/* Context Banner - Neon Style */}
         {messages.length > 0 && isContextBannerVisible && (
-          <div className="max-w-3xl mx-auto w-full">
+          <div className="max-w-4xl mx-auto w-full">
             <div className="glass-card p-4 border-cyan-500/50">
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-start gap-3 flex-1">
@@ -165,7 +165,7 @@ export function Chat() {
       </div>
 
       <div className="p-4 bg-slate-950 border-t-2 border-slate-800 shadow-2xl">
-        <form className="flex mx-auto gap-2 w-full md:max-w-3xl">
+        <form className="flex mx-auto gap-2 w-full md:max-w-4xl">
           <MultimodalInput
             chatId={chatId}
             input={input}
