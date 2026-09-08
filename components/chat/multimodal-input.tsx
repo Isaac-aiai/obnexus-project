@@ -1,7 +1,6 @@
 "use client";
 
 import type { ChatRequestOptions, UIMessage } from "ai";
-import { motion } from "framer-motion";
 import type React from "react";
 import {
   useRef,
@@ -18,9 +17,6 @@ import { cn, sanitizeUIMessages } from "@/lib/utils";
 import { ArrowUpIcon, StopIcon } from "./icons";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import suggestedActionsData from "@/data/suggested-actions.json";
-
-const suggestedActions = suggestedActionsData;
 
 export function MultimodalInput({
   chatId,
@@ -103,49 +99,6 @@ export function MultimodalInput({
 
   return (
     <div className="relative w-full flex flex-col gap-3">
-      {/* Suggested Questions */}
-      {messages.length === 0 && (
-        <div className="flex flex-col gap-3">
-          <div className="glass-card p-3 rounded-xl border-cyan-500/40">
-            <p className="font-display text-sm text-slate-300 text-center font-bold">
-              Ask me directly or click a suggestion
-            </p>
-          </div>
-
-          <div className="max-h-[320px] sm:max-h-[280px] overflow-y-auto">
-            <div className="grid sm:grid-cols-2 gap-2 w-full pr-1">
-              {suggestedActions.map((suggestedAction, index) => (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ delay: 0.05 * index }}
-                  key={`suggested-action-${suggestedAction.title}-${index}`}
-                >
-                  <Button
-                    variant="ghost"
-                    onClick={async () => {
-                      append({
-                        role: "user",
-                        content: suggestedAction.action,
-                      });
-                    }}
-                    className="group glass-card text-left bg-slate-900 hover:bg-slate-800 hover:border-cyan-500/60 border-cyan-500/30 px-4 py-3 text-sm flex-1 gap-1 sm:flex-col w-full h-auto justify-start items-start transition-all cursor-pointer rounded-lg"
-                  >
-                    <span className="font-display text-sm text-slate-100">
-                      {suggestedAction.title}
-                    </span>
-                    <span className="text-xs text-slate-400 group-hover:text-slate-300 leading-snug transition-colors">
-                      {suggestedAction.label}
-                    </span>
-                  </Button>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* User Message Input Form */}
       <div className="relative">
         <Textarea

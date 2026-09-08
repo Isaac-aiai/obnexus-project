@@ -1,37 +1,67 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { HeartPulse } from "lucide-react";
-import { METADATA } from "@/lib/constants";
+import suggestedActionsData from "@/data/suggested-actions.json";
 
-export const Overview = () => {
+// Curated starting points for the empty chat state. The full list is still
+// reachable by just typing a question.
+const PRIMARY_ACTIONS = suggestedActionsData.slice(0, 6);
+
+export const Overview = ({
+  append,
+}: {
+  append: (message: any) => Promise<string | null | undefined>;
+}) => {
   return (
     <motion.div
       key="overview"
-      className="max-w-4xl mx-auto md:mt-8"
-      initial={{ opacity: 0, y: 20 }}
+      className="mx-auto w-full max-w-3xl"
+      initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{ delay: 0.3 }}
+      transition={{ duration: 0.4 }}
     >
-      <div className="glass-card border-cyan-500/50">
-        <div className="py-12 px-8 flex flex-col items-center text-center">
-          {/* AI Icon - Neon style */}
-          <div className="mb-6">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-600/20 to-purple-600/20 border-2 border-cyan-500/60 shadow-lg shadow-cyan-500/40">
-              <HeartPulse className="w-8 h-8 text-cyan-300 font-bold" />
-            </div>
+      <div className="glass-card border-cyan-500/50 p-5 sm:p-6">
+        {/* Header */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-2 border-cyan-500/60 bg-gradient-to-br from-cyan-600/20 to-purple-600/20 shadow-lg shadow-cyan-500/40">
+            <HeartPulse className="h-6 w-6 text-cyan-300" />
           </div>
+          <div className="min-w-0">
+            <h2 className="font-display text-xl text-white sm:text-2xl">
+              Hi! I&apos;m <span className="text-cyan-400">OBNexus</span>
+            </h2>
+            <p className="text-sm text-slate-400">
+              Your OB/GYN scheduling assistant — ask me directly or pick a starting point.
+            </p>
+          </div>
+        </div>
 
-          <h2 className="font-display text-3xl sm:text-4xl text-white mb-2">
-            Hi! I'm <span className="text-cyan-400">{METADATA.AI_ASSISTANT_NAME}</span>
-          </h2>
+        {/* Divider ties the two halves into one panel */}
+        <div className="my-4 h-px bg-slate-800" />
 
-          <p className="font-display text-lg text-slate-300 mb-4">
-            Your OB/GYN Scheduling Assistant
-          </p>
-
-          <p className="text-slate-400 max-w-md leading-relaxed">
-            I can help you check ward status, predict patient discharge times, coordinate room assignments, flag high-risk cases, and assist with placing orders. Just ask!
-          </p>
+        {/* Suggestions */}
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          {PRIMARY_ACTIONS.map((action, index) => (
+            <motion.button
+              key={action.title}
+              type="button"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.05 * index + 0.15 }}
+              onClick={() =>
+                append({ role: "user", content: action.action })
+              }
+              className="group flex h-full flex-col items-start gap-1 rounded-lg border border-cyan-500/25 bg-slate-900 px-3.5 py-3 text-left transition-all hover:border-cyan-500/60 hover:bg-slate-800"
+            >
+              <span className="font-display text-sm text-slate-100">
+                {action.title}
+              </span>
+              <span className="text-xs leading-snug text-slate-400 transition-colors group-hover:text-slate-300">
+                {action.label}
+              </span>
+            </motion.button>
+          ))}
         </div>
       </div>
     </motion.div>

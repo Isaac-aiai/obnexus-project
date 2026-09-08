@@ -5,7 +5,7 @@ export const METADATA = {
 } as const;
 
 export const CDN_ASSETS = {
-  HERO_IMAGE_LOW_MARGIN: HERO_IMAGE_LOW_MARGIN: "/images/profile.png",
+  HERO_IMAGE_LOW_MARGIN: "/images/profile.png",
   PROFILE_PHOTO: "/images/profile.png",
 } as const;
 

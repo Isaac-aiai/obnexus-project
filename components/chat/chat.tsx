@@ -4,6 +4,7 @@ import { PreviewMessage, ThinkingMessage } from "./message";
 import { MultimodalInput } from "./multimodal-input";
 import { Overview } from "./overview";
 import { useScrollToBottom } from "@/hooks/use-scroll-to-bottom";
+import { cn } from "@/lib/utils";
 import { useChat } from "@ai-sdk/react";
 import { toast } from "sonner";
 import { useState, useEffect, useRef } from "react";
@@ -107,10 +108,15 @@ export function Chat() {
     <div className="flex flex-col min-w-0 h-[calc(100dvh-64px)] bg-black gradient-dark">
       <div
         ref={messagesContainerRef}
-        className="flex flex-col min-w-0 gap-4 flex-1 overflow-y-scroll pt-4 px-4"
+        className={cn(
+          "flex flex-col min-w-0 gap-4 flex-1 px-4",
+          messages.length === 0
+            ? "items-center justify-center overflow-hidden py-4"
+            : "overflow-y-scroll pt-4",
+        )}
       >
         {/* Initial AI Assistant Welcome Display */}
-        {messages.length === 0 && <Overview />}
+        {messages.length === 0 && <Overview append={append} />}
 
         {/* Context Banner - Neon Style */}
         {messages.length > 0 && isContextBannerVisible && (
